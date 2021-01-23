@@ -64,12 +64,12 @@ elif Three == 2:
     sliser = random.randint(1,2)
     if sliser == 1:
         print("О нет! Бык тебя заметил, беги!")
-        yourlife = True
         print("Ты смог убежать.")
+        yourlife = True
     else:
         print("О нет! Бык тебя заметил, беги!")
-        yourlife = False
         print("Ты не смог убежать.")
+        yourlife = False
 else:
     print("Отлично! Ты пошёл к овцам и получил 1 кг шерсти. Только есть вопрос... Откуда у тебя вообще все эти животные?")
     wool += 1
