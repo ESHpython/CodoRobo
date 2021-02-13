@@ -1,9 +1,16 @@
 import time
+import random
 egg = 0
 milk = 0
-woll = 0
 vegetables = 0
-coin = 0
+
+
+fried_egg = {'name' : 'Яичница', 'egg' : 2, 'milk' : 1, 'vegetables' : 1}
+salad = {'name' : 'Салат', 'egg' : 0, 'milk' : 0, 'vegetables' : 4}
+stew = {'name' : 'Рагу', 'egg' : 2, 'milk' : 0, 'vegetables' : 3}
+
+
+
 
 game = True
 # print('''''')
@@ -12,8 +19,8 @@ def chiken():
         global egg
         print("Ты кормишь кур... ")
         time.sleep(10)
-        print("Ты покормил куриц и собрал 1 десяток яиц")
-        egg += 1
+        print("Ты покормил куриц и собрал 4 яйца")
+        egg += 4
 
 
 def cow():
@@ -24,14 +31,6 @@ def cow():
         print("Ты покормил корову и получил 1 литр молока")
         milk += 1
 
-def ship():
-    if game == True:
-        global woll
-        print("Ты кормишь овцу...")
-        time.sleep(30)
-        print("Ты покормил овцу и получил 1 кг шерсти")
-        woll += 1
-
 
 def kitchen_garden():
     if game == True:
@@ -39,30 +38,28 @@ def kitchen_garden():
         print("Ты собираешь овощи...")
         time.sleep(20)
         print("Ты собрал овощи и получил 1 кг овощей")
-        vegetables += 1
-
-def trade():
-    if game == True:
-        global egg, milk, woll, vegetables, coin
-        tradeEgg = egg * 30
-        tradeMilk = milk * 50
-        tradeWoll = woll * 100
-        tradeV = vegetables * 80
-        coin = tradeEgg + tradeMilk + tradeWoll + tradeV
-        print("Прибыли от продажи составила: {} рублей.".format(coin))
+        vegetables += 4
 
 
-while game:
-    choice = int(input("1 - яица, 2 - молоко, 3 - шерсть, 4 - овощи, 5 - продать, 6 - завершить игру: "))
-    if choice == 1:
-        chiken()
-    elif choice == 2:
-        cow()
-    elif choice == 3:
-        ship()
-    elif choice == 4:
-        kitchen_garden()
-    elif choice == 5:
-        trade()
-    elif choice == 6:
-        game = False
+
+
+# while game:
+    # choice = int(input("1 - яица, 2 - молоко, 3 - овощи, 4 - завершить игру: "))
+    # if choice == 1:
+    #     chiken()
+    # elif choice == 2:
+    #     cow()
+    # elif choice == 3:
+    #     kitchen_garden()
+    # elif choice == 4:
+    #     game = False
+
+
+# print(fried_egg.get("name"))
+rand_dish = random.randint(1,3)
+if rand_dish == 1:
+    print("клиентнт выбрал {}. ".format(fried_egg.get("name")))
+elif rand_dish == 2:
+    print("клиентнт выбрал {}. ".format(salad.get("name")))
+else:
+    print("клиентнт выбрал {}. ".format(stew.get("name")))
